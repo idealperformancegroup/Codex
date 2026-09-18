@@ -6,6 +6,7 @@ from pathlib import Path
 import typer
 from rich import print
 
+from .orchestrator import run_opportunity_engine
 from .pipeline import run_social_pipeline
 from .social_intelligence import create_signal_report
 
@@ -37,6 +38,25 @@ def analyze_social(
     """Capture, transcribe, sample frames, and produce a Social Intelligence report."""
     output = run_social_pipeline(url, run_dir, whisper_model)
     print(f"[green]Social Intelligence report[/green] {output}")
+
+
+@app.command("run")
+def run_engine(
+    url: str = typer.Argument(..., help="Permitted public signal URL"),
+    run_dir: Path = typer.Option(Path("runs/opportunity"), "--run-dir"),
+    whisper_model: str = typer.Option("small", "--whisper-model"),
+    research: bool = typer.Option(True, "--research/--no-research"),
+    results_per_query: int = typer.Option(5, "--results-per-query", min=1, max=20),
+) -> None:
+    """Run the end-to-end IPG Opportunity Engine."""
+    output = run_opportunity_engine(
+        url,
+        run_dir,
+        whisper_model=whisper_model,
+        results_per_query=results_per_query,
+        do_research=research,
+    )
+    print(f"[bold green]Opportunity Engine report[/bold green] {output}")
 
 
 if __name__ == "__main__":
