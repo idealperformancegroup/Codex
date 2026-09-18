@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IPG Opportunity Report",
+  "type": "object",
+  "required": ["source", "evidence", "business_model", "opportunity", "experiment"],
+  "properties": {
+    "source": {
+      "type": "object",
+      "required": ["url", "platform", "captured_at"],
+      "properties": {
+        "url": {"type": "string"},
+        "platform": {"type": "string"},
+        "creator_or_advertiser": {"type": ["string", "null"]},
+        "captured_at": {"type": "string"}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "verified_facts": {"type": "array", "items": {"type": "string"}},
+        "observable_signals": {"type": "array", "items": {"type": "string"}},
+        "estimates": {"type": "array", "items": {"type": "string"}},
+        "assumptions": {"type": "array", "items": {"type": "string"}},
+        "hypotheses": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "business_model": {
+      "type": "object",
+      "properties": {
+        "what_is_sold": {"type": ["string", "null"]},
+        "customer": {"type": ["string", "null"]},
+        "monetization": {"type": ["string", "null"]},
+        "acquisition": {"type": ["string", "null"]},
+        "fulfillment": {"type": ["string", "null"]}
+      }
+    },
+    "opportunity": {
+      "type": "object",
+      "properties": {
+        "problem": {"type": ["string", "null"]},
+        "gap": {"type": ["string", "null"]},
+        "differentiation": {"type": ["string", "null"]},
+        "automation_advantage": {"type": ["string", "null"]},
+        "estimated_complexity": {"type": ["string", "null"]},
+        "estimated_capital_required": {"type": ["number", "null"]}
+      }
+    },
+    "experiment": {
+      "type": "object",
+      "properties": {
+        "test": {"type": ["string", "null"]},
+        "budget": {"type": ["number", "null"]},
+        "success_metric": {"type": ["string", "null"]},
+        "kill_condition": {"type": ["string", "null"]}
+      }
+    }
+  }
+}
