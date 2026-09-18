@@ -4,14 +4,16 @@ import json
 from pathlib import Path
 
 from .audio import extract_audio
+from .business_intelligence import build_business_intelligence
 from .capture import capture_media
+from .research_plan import build_research_plan
 from .social_intelligence import create_signal_report
 from .storyboard import extract_storyboard
 from .transcription import normalize_transcript, transcribe
 
 
 def run_social_pipeline(url: str, run_dir: Path, whisper_model: str = "small") -> Path:
-    """URL -> capture -> audio -> transcript -> storyboard -> machine-readable report."""
+    """URL -> source evidence -> business signals -> downstream research plan."""
     run_dir.mkdir(parents=True, exist_ok=True)
     capture = capture_media(url, run_dir / "capture")
     audio = extract_audio(capture.media_path, run_dir / "audio" / "speech.wav")
@@ -26,6 +28,11 @@ def run_social_pipeline(url: str, run_dir: Path, whisper_model: str = "small") -
         "frame_count": len(frames),
         "frames": [str(p) for p in frames],
     }
+    business_intelligence = build_business_intelligence(
+        transcript, report["visual_analysis"]
+    )
+    report["business_intelligence"] = business_intelligence
+    report["research_plan"] = build_research_plan(business_intelligence)
     report["artifacts"] = {
         "media": str(capture.media_path),
         "metadata": str(capture.metadata_path),
