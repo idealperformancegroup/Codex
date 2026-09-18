@@ -1,0 +1,20 @@
+[project]
+name = "ipg-opportunity-engine"
+version = "0.1.0"
+description = "Opportunity-first market intelligence and commercialization engine for Ideal Performance Group"
+requires-python = ">=3.11"
+dependencies = [
+  "pydantic>=2.8",
+  "typer>=0.12",
+  "rich>=13.7",
+]
+
+[project.scripts]
+ipg-opportunity = "ipg_opportunity_engine.cli:app"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
