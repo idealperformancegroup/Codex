@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IPG Market Research Evidence",
+  "type": "object",
+  "required": ["competitors", "reviews"],
+  "properties": {
+    "competitors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "source_url"],
+        "properties": {
+          "name": {"type": "string"},
+          "source_url": {"type": "string"},
+          "offer": {"type": ["string", "null"]},
+          "price": {"type": ["number", "null"]},
+          "acquisition_channel": {"type": ["string", "null"]},
+          "observed_ad_signal": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_url", "text"],
+        "properties": {
+          "source_url": {"type": "string"},
+          "text": {"type": "string"},
+          "rating": {"type": ["number", "null"]},
+          "product_or_company": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}
