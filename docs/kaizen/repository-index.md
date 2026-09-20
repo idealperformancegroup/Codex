@@ -163,3 +163,20 @@ For every deep-review candidate:
 7. test in isolation;
 8. measure delta;
 9. adopt, reject, or hold.
+
+
+## KAIZEN Scan 02 - Digital Product Intelligence - 2026-09-20
+
+A focused search for repositories that support demonstrated-demand discovery, complaint/review mining, competitive gap analysis, product underwriting, and autonomous creation produced a **composable stack rather than one complete proven repository**.
+
+High-value findings:
+- **assafelovic/gpt-researcher** - research substrate; deep review/test.
+- **debba/gaphunter-skill** - complaint-to-roadmap gap-mining methodology; high-priority methodology candidate.
+- **RohitWaghire/Deep-Market-Reasearch** - direct pain/demand/1-star-review/competitor-gap methodology; methodology candidate, but very small/new repo.
+- **lhstorm/open-product-researcher** - structured research-to-decision/PRD architecture; proof-of-concept reference.
+- **bigideas-db/.github** - potentially useful external complaint/revenue intelligence and MCP data source; verify independently.
+- **alexar76/aicom** - autonomous idea-to-web-product build pipeline; technically interesting but requires isolated review before adoption.
+
+See [Digital Product Intelligence & Creation Stack](digital-product-intelligence.md) for the proposed architecture.
+
+**Key conclusion:** KAIZEN should combine research + gap mining + underwriting + build components under its own portfolio decision rules rather than surrendering product selection to any single external project.
