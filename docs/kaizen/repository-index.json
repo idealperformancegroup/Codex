@@ -1,0 +1,80 @@
+{
+  "version": "0.1",
+  "updated_at": "2026-09-20",
+  "purpose": "KAIZEN repository capability registry",
+  "statuses": [
+    "discovered",
+    "priority-discovery-source",
+    "high-relevance",
+    "test-candidate",
+    "strategic-candidate",
+    "deprioritized",
+    "testing",
+    "adopted",
+    "rejected"
+  ],
+  "repository_types": [
+    "discovery-feed",
+    "capability-tool",
+    "infrastructure",
+    "reference-learning",
+    "deprioritized"
+  ],
+  "evaluation_dimensions": [
+    "use_case_fit",
+    "activity",
+    "adoption",
+    "license",
+    "maintainer_signal",
+    "documentation",
+    "integration_difficulty",
+    "capability_overlap",
+    "security_risk",
+    "expected_delta",
+    "test_result"
+  ],
+  "repositories": [
+    {
+      "repo": "taishi-i/awesome-ChatGPT-repositories",
+      "type": "discovery-feed",
+      "domain": "AI/LLM discovery",
+      "status": "priority-discovery-source",
+      "observed": "Curated ~2700 repositories; scored Codex/Claude search; updated 2026-09-18; CC0-1.0"
+    },
+    {
+      "repo": "punkpeye/awesome-mcp-servers",
+      "type": "discovery-feed",
+      "domain": "MCP discovery",
+      "status": "priority-discovery-source",
+      "observed": "Large active MCP catalog; MIT; ~95K stars observed 2026-09-20"
+    },
+    {
+      "repo": "github/github-mcp-server",
+      "type": "infrastructure",
+      "domain": "GitHub AI integration",
+      "status": "high-relevance",
+      "observed": "Official GitHub MCP server; MIT; active"
+    },
+    {
+      "repo": "microsoft/playwright-mcp",
+      "type": "capability-tool",
+      "domain": "browser automation / web QA",
+      "status": "test-candidate",
+      "observed": "Microsoft; Apache-2.0; active"
+    },
+    {
+      "repo": "openai/openai-agents-python",
+      "type": "capability-tool",
+      "domain": "agent orchestration",
+      "status": "strategic-candidate",
+      "observed": "Official OpenAI Agents SDK; tools, MCP, guardrails, sessions, tracing, voice, sandbox agents"
+    },
+    {
+      "repo": "microsoft/autogen",
+      "type": "deprioritized",
+      "domain": "agent orchestration",
+      "status": "deprioritized",
+      "observed": "README states maintenance mode; successor is Microsoft Agent Framework"
+    }
+  ]
+}
