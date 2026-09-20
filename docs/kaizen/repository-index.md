@@ -128,3 +128,38 @@ Popularity, stars, and community adoption are evidence inputs — not the final 
 6. Test before integrating.
 7. Record rejected/deprioritized repositories to avoid repeated work.
 8. Recheck high-potential repositories periodically.
+
+## KAIZEN Self-Improvement Scan 01 - 2026-09-20
+
+First focused scan across memory, RAG/knowledge, deep research, browser/computer use, agent architecture, and evaluation.
+
+| Repository | Domain | Observed capability | KAIZEN disposition | Why it matters / next test |
+|---|---|---|---|---|
+| [memvid/memvid](https://github.com/memvid/memvid) | Memory / RAG | Portable single-file, persistent, versioned AI memory with retrieval; model-agnostic | **Deep-review candidate** | Potential durable memory layer for autonomous KAIZEN agents and project-specific knowledge. Verify benchmark claims independently and test retrieval quality, portability, write/update behavior, and operational complexity. |
+| [assafelovic/gpt-researcher](https://github.com/assafelovic/gpt-researcher) | Autonomous research | Planner + execution agents; web/local research; source tracking; report generation; MCP topic; exports | **Deep-review candidate** | Closely matches KAIZEN's research mandate. Test whether its research pipeline improves breadth, sourcing, repeatability, and cost versus capabilities already available to us. |
+| [Tencent/BrowserSkill](https://github.com/Tencent/BrowserSkill) | Browser / computer use | CLI + extension intended to let shell-capable AI agents operate a user's real logged-in browser | **Deep-review candidate - security-sensitive** | Potentially valuable for authenticated workflows. Requires strict review of permissions, credential/session exposure, action controls, and overlap with existing browser/computer-use tooling before any installation. |
+| [run-llama/llama_index](https://github.com/run-llama/llama_index) | RAG / knowledge | Framework surfaced in high-adoption RAG search | **Research queue** | Evaluate specifically for KAIZEN knowledge ingestion/indexing rather than adopting a large framework by default. |
+| [humanlayer/12-factor-agents](https://github.com/humanlayer/12-factor-agents) | Agent architecture | Agent design patterns / principles surfaced in RAG-agent search | **Learning/reference queue** | Mine design principles that could improve our architecture without necessarily adding another dependency. |
+
+### Scan 01 conclusion
+
+The strongest immediate investigation targets are **GPT Researcher**, **Memvid**, and **BrowserSkill**, but for three different reasons:
+
+- GPT Researcher: improve the *research engine*.
+- Memvid: improve the *memory/knowledge layer*.
+- BrowserSkill: improve the *action/execution layer*.
+
+These are candidates for testing, not automatic adoption. KAIZEN should compare each against capabilities already available in ChatGPT/Codex before adding infrastructure.
+
+### Next gate
+
+For every deep-review candidate:
+1. inspect architecture and dependencies;
+2. inspect license and maintenance;
+3. identify exact capability gap it fills;
+4. compare with our existing capability;
+5. assess security/privacy risk;
+6. define a small benchmark task;
+7. test in isolation;
+8. measure delta;
+9. adopt, reject, or hold.
